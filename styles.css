@@ -14,6 +14,7 @@
 }
 
 body {
+  background-color: #ffffff;
     font-family: sans-serif ;
     color: #333;
     line-height: 1.6;
@@ -27,30 +28,27 @@ body {
 .main-menu {
     display: flex;
     gap: 30px; /* Espacio entre los enlaces */
-    padding: 0px 300px;
-    background-color: #ffffff; /* Fondo claro para el menú */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 60px 300px;
+    background-color: #9d0f0f; /* Fondo claro para el menú */
+    box-shadow: 0 12px 10px rgba(0, 0, 0, 0.275);
     border-radius: 8px;
-    justify-content: center;
-    
-  }
+    justify-content:center;
+    margin-top: -120px;
+    top: 100px;
+    margin-bottom: 10px;
+    }
 
 .efecto-link {
     text-decoration: none;
     font-size: 19px;
     font-weight: 600;
     padding: 5px 0; 
-    
-    background: linear-gradient(to right, #333 50%, #9d0f0f 50%);
+    background: linear-gradient(to right, #f5b9b9 50%, #ffffff 50%);
     background-size: 200% 100%; 
     background-position: left bottom; 
-
-    
     -webkit-background-clip: text; 
     background-clip: text;
-    
     -webkit-text-fill-color: transparent; 
-
     transition: background-position 0.4s ease-in-out; 
 }
 
@@ -67,8 +65,8 @@ body {
 }
 
 .logo img {
-    width: 350px;
-    height: 65px;
+    width: 330px;
+    height: 70px;
     margin-right: 0%;
     margin-top: 20px;
     margin-left: 30px;
@@ -89,7 +87,7 @@ body {
 }
 
 .main-nav li {
-    margin: 0 10px;
+    margin: 10px 10px;
 }
 
 .main{
@@ -175,11 +173,17 @@ ul li a:hover::before{
     width: 180px;
     height: 180px;
     border-radius: 50%;
-    background-color: var(--color-bg-gray); 
-    border: 1px solid var(--color-border);
     position: relative; 
     flex-shrink: 0; 
+    cursor: pointer;
+    transition: 2s;
 }
+
+.quick-link:hover{
+    transform: scale(1.1);
+  transition: 2s;
+}
+
 
 .quick-link-label {
     position: absolute;
@@ -538,23 +542,6 @@ border-radius: 10%;
     .main-nav {
         display: none; 
     }
-
-    .menu-toggle {
-        display: block; 
-        position: absolute;
-        top: 15px;
-        right: 10px;
-    }
-
-    .mobile-menu {
-        width: 100%;
-        margin-top: 10px;
-        border-top: 1px solid var(--color-border);
-    }
-    .mobile-menu.active {
-        display: block;
-    }
-
 
     /* Columnas principales: Se apilan a una sola columna */
     .top-content-grid {

@@ -10,11 +10,12 @@
 <body>
 
     <header class="main-header">
+        <button class="menu-toggle" aria-label="Abrir menú"></button>  
         <div class="logo">
-            <img src="/Imagenes/Logo uni.png" height="200px" width="200px">
-        </div>
-        <button class="menu-toggle" aria-label="Abrir menú"></button>
+      <img src="/Imagenes/Logo Universidad.png">
+  </div>
 <nav class="main-menu">
+
         <a href="#inicio" class="efecto-link">Inicio</a>
         <a href="#quienes-somos" class="efecto-link">Quienes Somos</a>
         <a href="#carreras" class="efecto-link">Carreras</a>
@@ -22,7 +23,7 @@
         <a href="#noticias" class="efecto-link">Noticias</a>
         <a href="#contacto" class="efecto-link">Contacto</a>
     </nav>
-        </nav>
+<!--<nav>
         <div class="mobile-menu">
             <ul>
                 <li><a href="#">Inicio</a></li>
@@ -33,6 +34,7 @@
                 <li><a href="#">Contacto</a></li>
             </ul>
         </div>
+        </nav>-->
     </header>
 
     <section class="hero-slider">
@@ -47,15 +49,19 @@
             <div class="content-left">
                 <section class="quick-links">
                     <div class="quick-link">
+                      <img src="/Imagenes/icon.png" class="quick-link">
                         <span class="quick-link-label">Arquitectura</span>
                     </div>
                     <div class="quick-link">
-                        <span class="quick-link-label">Diseño Gráfico</span>
+                      <img src="/Imagenes/icon.png" class="quick-link">
+                        <span class="quick-link-label">Diseño Grafico</span>
                     </div>
                     <div class="quick-link">
+                      <img src="/Imagenes/icon.png" class="quick-link">
                         <span class="quick-link-label">Museología</span>
                     </div>
                     <div class="quick-link">
+                      <img src="/Imagenes/icon.png" class="quick-link">
                         <span class="quick-link-label">Diseño Industrial</span>
                     </div>
                 </section>
@@ -182,13 +188,6 @@
             <h2>UNIVERSIDAD<br>José María Vargas</h2>
         </div>
     </footer>
-
-    <script>
-        // JavaScript para el menú hamburguesa
-        document.querySelector('.menu-toggle').addEventListener('click', function() {
-            document.querySelector('.mobile-menu').classList.toggle('active');
-        });
-    </script>
 
 </body>
 </html>
