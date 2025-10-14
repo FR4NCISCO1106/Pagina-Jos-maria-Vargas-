@@ -6,23 +6,25 @@
     <title>Universidad José María Vargas - Inicio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="short icon" href="/Imagenes/icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
 </head>
 <body>
 
     <header class="main-header">
         <button class="menu-toggle" aria-label="Abrir menú"></button>  
         <div class="logo">
-      <img src="/Imagenes/Logo Universidad.png">
-  </div>
+        <img src="/Imagenes/Logo Universidad.png">
+    </div>
 <nav class="main-menu">
 
         <a href="#inicio" class="efecto-link">Inicio</a>
-        <a href="#quienes-somos" class="efecto-link">Quienes Somos</a>
+        <a href="/nosotros.html" class="efecto-link">Quienes Somos</a>
         <a href="#carreras" class="efecto-link">Carreras</a>
         <a href="#portal" class="efecto-link">Portal</a>
         <a href="#noticias" class="efecto-link">Noticias</a>
         <a href="#contacto" class="efecto-link">Contacto</a>
     </nav>
+
 <!--<nav>
         <div class="mobile-menu">
             <ul>
@@ -37,6 +39,87 @@
         </nav>-->
     </header>
 
+    <div class="maria">
+        <div class="container">
+        <div class="panel active" style="background-image: url('Imagenes/BANNER\ 1\ MASCOTA.jpg')">
+            <h3>Mi Primera Imagen</h3>
+        </div>
+        <div class="panel" style="background-image: url('Imagenes/carru\ 2.jpg')">
+            <h3>Mi Segunda Imagen</h3>
+        </div>
+        <div class="panel" style="background-image: url('Imagenes/carru\ 3.jpg')">
+            <h3>Mi Tercera Imagen</h3>
+        </div>
+        <div class="panel" style="background-image: url('Imagenes/banner\ de\ pw\ UJMV.png')">
+            <h3>Mi Cuarta Imagen</h3>
+        </div>
+        <div class="panel" style="background-image: url('Imagenes/carru\ 5.jpg')">
+            <h3>Mi Quinta Imagen</h3>
+        </div>
+        </div>
+        <script src="app.js"></script>
+        <script>
+        const panels = document.querySelectorAll('.panel')
+
+        panels.forEach(panel => {
+            panel.addEventListener('click', () => {
+            removeActiveClasses()
+            panel.classList.add('active')
+            })
+        })
+
+        function removeActiveClasses() {
+            panels.forEach(panel => {
+            panel.classList.remove('active')
+            })
+        }
+        </script>
+        <script>
+        const panel = document.querySelectorAll('.panel');
+        let currentIndex = 0; // Índice para seguir qué panel está activo
+        const intervalTime = 4000; // 4000ms = 4 segundos de espera
+
+        // Función para quitar la clase 'active' de todos los paneles
+        function removeActiveClasses() {
+            panels.forEach(panel => {
+                panel.classList.remove('active');
+            });
+        }
+
+        // Función para activar el siguiente panel
+        function activateNextPanel() {
+            // 1. Quitar la clase 'active' del panel actual
+            removeActiveClasses();
+
+            // 2. Mover al siguiente índice. Usa el operador módulo (%) para
+            //    volver al inicio (0) cuando llegues al final.
+            currentIndex = (currentIndex + 1) % panels.length;
+
+            // 3. Añadir la clase 'active' al nuevo panel
+            panels[currentIndex].classList.add('active');
+        }
+
+        // Agrega el evento 'click' a cada panel para la interacción manual
+        panels.forEach((panel, index) => {
+            panel.addEventListener('click', () => {
+                // Detenemos el carrusel automático al hacer clic para dar control al usuario
+                clearInterval(autoAdvance);
+                
+                // Activamos el panel seleccionado
+                removeActiveClasses();
+                panel.classList.add('active');
+                
+                // Actualizamos el índice para que el carrusel continúe desde este punto si se reanuda
+                currentIndex = index; 
+            });
+        });
+
+
+        // Usa setInterval() para llamar a activateNextPanel() cada 3 segundos
+        const autoAdvance = setInterval(activateNextPanel, intervalTime);
+        </script>
+</div>
+
     <section class="hero-slider">
         <div class="slider-controls">
         </div>
@@ -49,82 +132,114 @@
             <div class="content-left">
                 <section class="quick-links">
                     <div class="quick-link">
-                      <img src="/Imagenes/icon.png" class="quick-link">
+                    <img src="/Imagenes/icon.png" class="quick-link">
                         <span class="quick-link-label">Arquitectura</span>
                     </div>
                     <div class="quick-link">
-                      <img src="/Imagenes/icon.png" class="quick-link">
+                    <img src="/Imagenes/icon.png" class="quick-link">
                         <span class="quick-link-label">Diseño Grafico</span>
                     </div>
                     <div class="quick-link">
-                      <img src="/Imagenes/icon.png" class="quick-link">
+                    <img src="/Imagenes/icon.png" class="quick-link">
                         <span class="quick-link-label">Museología</span>
                     </div>
                     <div class="quick-link">
-                      <img src="/Imagenes/icon.png" class="quick-link">
+                    <img src="/Imagenes/icon.png" class="quick-link">
                         <span class="quick-link-label">Diseño Industrial</span>
                     </div>
                 </section>
-                <section class="news-section">
-            <h2 class="news-title-bar">Noticias</h2>
-            <div class="news-grid">
-                <div class="news-item">
-                    <div class="news-image-placeholder"></div>
-                    <div class="news-content">
-                        <h3>cafafasfasfcascfatc</h3>
-                        <p>dfa gae gefqae gwege fagw</p>
-                    </div>
-                </div>
-                <div class="news-item">
-                    <div class="news-image-placeholder"></div>
-                    <div class="news-content">
-                        <h3>cafafasfasfcascfatc</h3>
-                        <p>dfa gae gefqae gwege fagw</p>
-                    </div>
-                </div>
-                <div class="news-item">
-                    <div class="news-image-placeholder"></div>
-                    <div class="news-content">
-                        <h3>cafafasfasfcascfatc</h3>
-                        <p>dfa gae gefqae gwege fagw</p>
-                    </div>
-                </div>
-                <div class="news-item">
-                    <div class="news-image-placeholder"></div>
-                    <div class="news-content">
-                        <h3>cafafasfasfcascfatc</h3>
-                        <p>dfa gae gefqae gwege fagw</p>
-                    </div>
-                </div>
-                <div class="news-item">
-                    <div class="news-image-placeholder"></div>
-                    <div class="news-content">
-                        <h3>cafafasfasfcascfatc</h3>
-                        <p>dfa gae gefqae gwege fagw</p>
-                    </div>
-                </div>
-                <div class="news-item">
-                    <div class="news-image-placeholder"></div>
-                    <div class="news-content">
-                        <h3>cafafasfasfcascfatc</h3>
-                        <p>dfa gae gefqae gwege fagw</p>
-                    </div>
-                </div>
+<section class="news-section">
+    <h2 class="news-title-bar">Noticias</h2>
+    <div class="news-grid">
+        <div class="news-item">
+            <img src="/Imagenes" alt="Imagen de Noticia 1" class="news-image">
+            
+            <div><img src="/Imagenes/icon.png" alt="Icono" class="news-image-placeholder"></div>
+            
+            <div class="news-content">
+                <h3>Noticia</h3>
+                <p>Información de Noticia</p>
             </div>
-        </section>
+        </div>
+        
+        <div class="news-item">
+            <img src="ruta/imagen-noticia-2.jpg" alt="Imagen de Noticia 2" class="news-image">
+            <div><img src="/Imagenes/icon.png" alt="Icono" class="news-image-placeholder"></div>
+            <div class="news-content">
+                <h3>Noticia 1</h3>
+                <p>Información Noticia 1</p>
+            </div>
+        </div>
+        
+        <div class="news-item">
+            <img src="ruta/imagen-noticia-3.jpg" alt="Imagen de Noticia 3" class="news-image">
+            <div><img src="/Imagenes/icon.png" alt="Icono" class="news-image-placeholder"></div>
+            <div class="news-content">
+                <h3>Noticia 2</h3>
+                <p>Información Noticia 2</p>
+            </div>
+        </div>
+        
+        <div class="news-item">
+            <img src="ruta/imagen-noticia-4.jpg" alt="Imagen de Noticia 4" class="news-image">
+            <div><img src="/Imagenes/icon.png" alt="Icono" class="news-image-placeholder"></div>
+            <div class="news-content">
+                <h3>Noticia 3</h3>
+                <p>Información Noticia 3</p>
+            </div>
+        </div>
+        
+        <div class="news-item">
+            <img src="ruta/imagen-noticia-5.jpg" alt="Imagen de Noticia 5" class="news-image">
+            <div><img src="/Imagenes/icon.png" alt="Icono" class="news-image-placeholder"></div>
+            <div class="news-content">
+                <h3>Información Noticia 4</h3>
+                <p>Información Noticia 4</p>
+            </div>
+        </div>
+        
+        <div class="news-item">
+            <img src="ruta/imagen-noticia-6.jpg" alt="Imagen de Noticia 6" class="news-image">
+            <div><img src="/Imagenes/icon.png" class="news-image-placeholder"></div>
+            <div class="news-content">
+                <h3>Noticia 5</h3>
+                <p>Información Noticia 5</p>
+            </div>
+        </div>
+    </div>
+</section>
             </div>
 
             <aside class="sidebar-right">
                 <div class="social-icons-wrapper">
-                    <div class="social-icons">
-                        <div class="social-icon">f</div>
-                        <div class="social-icon">x</div>
-                        <div class="social-icon">O</div> <div class="social-icon">T</div>
-                    </div>
+                    <div class="wrapper">
+    <div class="navbar">
+        <div class="navbar__item -blue">
+            <span class="navbar__icon">
+                <i class="fa-brands fa-twitter"></i>
+            </span>
+        </div>
+        <div class="navbar__item -orange">
+            <span class="navbar__icon">
+                <i class="fa-brands fa-youtube"></i>
+            </span>
+        </div>
+        <div class="navbar__item -navy-blue">
+            <span class="navbar__icon">
+                <i class="fa-brands fa-facebook"></i>
+            </span>
+        </div>
+        <div class="navbar__item -black">
+            <span class="navbar__icon">
+                <i class="fa-brands fa-instagram"></i>
+            </span>
+        </div>
+    </div>
+    </div>
                 </div>
                 <div class="sidebar-widget large-widget">
                     <div class="widget-bottom-content">
-                        <div class="insta-icon">O</div> <div class="user-handle">@ujsmv_</div>
+                        <div class="insta-icon"></div> <div class="user-handle">@ujsmv_</div>
                     </div>
                 </div>
                 <div class="sidebar-widget large-widget-bottom">
@@ -162,30 +277,223 @@
             </div>
         </section>
 
-        <section class="calendar-events-section">
-            <div class="calendar-container">
-                <h2>Febrero</h2>
-                <div class="calendar">
-                    <div class="day-header">LUN</div><div class="day-header">MAR</div><div class="day-header">MIÉ</div><div class="day-header">JUE</div><div class="day-header">VIE</div><div class="day-header">SÁB</div><div class="day-header special">DOM</div>
-                    <div class="day"></div><div class="day"></div><div class="day"></div><div class="day"></div><div class="day"></div><div class="day">11</div><div class="day special">12</div>
-                    <div class="day">13</div><div class="day">14</div><div class="day">15</div><div class="day">16</div><div class="day">17</div><div class="day">18</div><div class="day special">19</div>
-                    <div class="day">20</div><div class="day">21</div><div class="day">22</div><div class="day">23</div><div class="day">24</div><div class="day">25</div><div class="day special">26</div>
-                    <div class="day">27</div><div class="day">28</div><div class="day"></div><div class="day"></div><div class="day"></div><div class="day"></div><div class="day"></div>
-                </div>
+    <div class="calendario">
+        <header>
+            <p class="current-date">
+                </p> 
+            <div class="icons">
+                <span id="prevIcon" class="leftIcon"><</span>
+                <span id="nextIcon" class="rightIcon">></span>
             </div>
-            <div class="events-list">
-                <div class="event-item">fcajbqowno</div>
-                <div class="event-item">fcajbqowno</div>
-                <div class="event-item">fcajbqowno</div>
-            </div>
+        </header>
+        <div class="calendar">
+            <ul class="weeks">
+                <li>Dom</li>
+                <li>Lun</li>
+                <li>Mar</li>
+                <li>Mie</li>
+                <li>Jue</li>
+                <li>Vie</li>
+                <li>Sab</li>
+            </ul>
+            <ul class="days">
+                </ul>
+        </div>
+    </div>
+    
+    <div id="celebrationModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3 id="modalDate"></h3>
+            <p id="modalText"></p>
+        </div>
+    </div>
+
+    <script> 
+const currentDateTitle = document.querySelector(".current-date"),
+        daysTag = document.querySelector(".days"),
+        prevNextIcons = document.querySelectorAll(".icons span");
+        
+
+const modal = document.getElementById('celebrationModal');
+const modalDateElement = document.getElementById('modalDate');
+const modalTextElement = document.getElementById('modalText');
+const closeButton = document.querySelector('.close-button');
+
+
+let selectedDate = null; 
+
+const celebrations = {
+    '2025-10-13': 'Día de la Reunificación!', 
+    '2025-10-15': 'Cumpleaños de María',
+    '2025-10-24': 'Aniversario de la Empresa',
+    '2025-10-31': 'Celebración de Halloween',
+    '2025-11-01': 'Día de Todos los Santos'
+};
+
+
+let date = new Date(),
+    currentYear = date.getFullYear(),
+    currentMonth = date.getMonth();
+
+const months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+
+// Función para obtener la fecha de hoy formateada como YYYY-MM-DD
+const getTodayFormatted = () => {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, '0');
+    const day = String(today.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+};
+
+const renderCalendar = () => {
+    const todayFormatted = getTodayFormatted(); // Fecha de hoy
+    
+    let firstDayOfMonth = new Date(currentYear, currentMonth, 1).getDay();
+    let lastDateOfMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+    let lastDayOfMonth = new Date(currentYear, currentMonth, lastDateOfMonth).getDay();
+    let lastDateOfLastMonth = new Date(currentYear, currentMonth, 0).getDate();
+    let liDayTag = "";
+    
+    for (let i = firstDayOfMonth; i > 0; i--) {
+        liDayTag += `<li class="inactive">${lastDateOfLastMonth - i + 1}</li>`;
+    }
+    
+    for(let i = 1; i <= lastDateOfMonth; i++) {
+        // Formatear la fecha actual del bucle como 'YYYY-MM-DD'
+        const dayFormatted = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}-${String(i).padStart(2, '0')}`;
+        
+        let classes = '';
+
+        // 1. Marcar el día seleccionado
+        if (dayFormatted === selectedDate) {
+            classes = 'active';
+        }
+        
+        // 2. Marcar el día de HOY
+        if (dayFormatted === todayFormatted) {
+            // Usa una clase separada para "Hoy"
+            classes += (classes ? ' ' : '') + 'is-today'; 
+        }
+
+        // 3. Marcar el día con celebración
+        if (celebrations[dayFormatted]) {
+            classes += (classes ? ' ' : '') + 'has-celebration';
+        }
+        
+        liDayTag += `<li data-date="${dayFormatted}" class="${classes.trim()}">${i}</li>`;
+    }
+    
+    for (let i = lastDayOfMonth; i < 6; i++ ) {
+        liDayTag += `<li class="inactive">${i - lastDayOfMonth + 1}</li>`;
+    }
+    
+    currentDateTitle.innerText = `${months[currentMonth]} ${currentYear}`;
+    daysTag.innerHTML = liDayTag;
+    
+    // Agregar el listener después de renderizar los días
+    addDayClickListener();
+    
+    // Configurar la auto-actualización (Solo se llama una vez al cargar el calendario)
+    setupDailyRefresh();
+}
+
+// Función para configurar la actualización diaria automática
+const setupDailyRefresh = () => {
+    // 1. Calcular cuántos milisegundos faltan para el inicio del próximo día (medianoche)
+    const now = new Date();
+    const tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
+    const msUntilMidnight = tomorrow.getTime() - now.getTime();
+
+    // 2. Programar la recarga para el momento justo después de medianoche
+    setTimeout(() => {
+        // Al recargar la página, el script se ejecuta de nuevo y renderiza el calendario
+        window.location.reload(); 
+    }, msUntilMidnight);
+};
+
+
+const addDayClickListener = () => {
+    const allDays = daysTag.querySelectorAll('li:not(.inactive)');
+    
+    allDays.forEach(day => {
+        day.addEventListener('click', (e) => {
+            const dateClicked = e.target.getAttribute('data-date');
+            
+            // Lógica para seleccionar UN SOLO DÍA
+            const previouslyActive = daysTag.querySelector('li.active');
+            if (previouslyActive) {
+                previouslyActive.classList.remove('active');
+            }
+
+            if (dateClicked !== selectedDate) {
+                e.target.classList.add('active');
+                selectedDate = dateClicked;
+            } else {
+                selectedDate = null;
+            }
+
+            showCelebration(dateClicked); 
+        });
+    });
+}
+
+// Función para mostrar el modal de celebración (Misma que antes)
+const showCelebration = (dateKey) => {
+    const celebrationText = celebrations[dateKey];
+
+    if (celebrationText) {
+        const dateParts = dateKey.split('-');
+        const year = dateParts[0];
+        const monthIndex = parseInt(dateParts[1]) - 1;
+        const day = dateParts[2];
+        const monthName = months[monthIndex];
+        
+        modalDateElement.innerText = `¡Evento para el ${day} de ${monthName} de ${year}!`;
+        modalTextElement.innerText = celebrationText;
+        modal.style.display = 'flex';
+    }
+}
+
+// Lógica para cerrar el modal (Misma que antes)
+const closeModal = () => {
+    modal.style.display = 'none';
+}
+
+closeButton.addEventListener('click', closeModal);
+
+modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        closeModal();
+    }
+});
+
+
+// Inicializar el calendario
+renderCalendar();
+
+prevNextIcons.forEach(icon => {
+    icon.addEventListener("click", () => {
+        currentMonth = icon.id === "prevIcon" ? currentMonth-1 : currentMonth + 1;
+        
+        if (currentMonth < 0 || currentMonth > 11) {
+            date = new Date(currentYear, currentMonth);
+            currentYear = date.getFullYear();
+            currentMonth = date.getMonth();
+        }
+        
+        renderCalendar();
+    });
+});
+    </script> 
         </section>
 
     </div>
 
     <footer class="main-footer">
         <div class="logo">
-            <img src="logo-u.png" alt="Logo Universidad José María Vargas">
-            <h2>UNIVERSIDAD<br>José María Vargas</h2>
+            <img src="/Imagenes/Logo Universidad.png" alt="Logo Universidad José María Vargas">
         </div>
     </footer>
 

@@ -1,10 +1,10 @@
-/* --- RESET BÁSICO Y VARIABLES --- */
 :root {
-    --color-u: #900; /* Color principal de la universidad (rojo oscuro) */
+    --color-u: #9d0f0f; 
     --color-bg-light: #f4f4f4;
     --color-bg-gray: #ccc;
     --color-border: #999;
     --color-news-box: #e0e0e0; 
+    --news-image-height: 200px; 
 }
 
 * {
@@ -14,7 +14,7 @@
 }
 
 body {
-  background-color: #ffffff;
+    background-color: #ffffff;
     font-family: sans-serif ;
     color: #333;
     line-height: 1.6;
@@ -24,12 +24,75 @@ body {
     border-right: 1px solid var(--color-border);
 }
 
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+.maria{
+    display: flex;
+    height: 55vh;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; 
+    margin: 0;
+    font-family: 'Muli', sans-serif;
+    cursor: pointer;
+
+}
+.container{
+    display: flex;
+    width: 100vw;
+}
+
+.panel{
+    
+    height: 50vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    flex: 0.5;
+
+    position: relative;
+
+
+    color: white;
+    border-radius: 50px;
+    cursor: pointer;
+    margin: 10px;
+    /*acelera al inico pero despues es lenta */
+    -webkit-transition: all 700ms ease-in; 
+
+}
+.panel h3{
+    color: white;
+    position: absolute;
+    bottom: 0;
+    left: 50px;
+    font-size: 35px;
+    opacity: 0;
+}
+
+.panel.active {
+    flex: 5;
+
+}
+.panel.active h3{
+    opacity: 1;
+}
+
+/* adicional */
+@media (max-width: 480px) {
+    .container {
+        width:50vw;
+    }
+    
+}
+
 /* --- CABECERA Y NAVEGACIÓN --- */
 .main-menu {
     display: flex;
-    gap: 30px; /* Espacio entre los enlaces */
+    gap: 30px; 
     padding: 60px 300px;
-    background-color: #9d0f0f; /* Fondo claro para el menú */
+    background-color: #9d0f0f; 
     box-shadow: 0 12px 10px rgba(0, 0, 0, 0.275);
     border-radius: 8px;
     justify-content:center;
@@ -143,9 +206,6 @@ ul li a:hover::before{
     filter: drop-shadow(0 0 25px var(--clr));
 }
 
-
-
-
 /* --- GRID SUPERIOR (Categorías y Sidebar) --- */
 .main-content-container {
     padding: 20px;
@@ -161,6 +221,8 @@ ul li a:hover::before{
 .content-left {
     padding-right: 20px; 
 }
+
+
 
 .quick-links {
     display: flex;
@@ -181,7 +243,7 @@ ul li a:hover::before{
 
 .quick-link:hover{
     transform: scale(1.1);
-  transition: 2s;
+    transition: 2s;
 }
 
 
@@ -228,7 +290,7 @@ ul li a:hover::before{
     justify-content: center;
     font-size: 0.7em;
     color: #555;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra añadida para coincidir con el diseño */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
 }
 
 .sidebar-widget {
@@ -278,8 +340,7 @@ ul li a:hover::before{
     font-size: 0.8em; 
 }
 
-
-/* --- SECCIÓN DE NOTICIAS (Sin cambios respecto a la última corrección) --- */
+/* --- SECCIÓN DE NOTICIAS CON AJUSTES DE ALTURA Y POSICIÓN --- */
 .news-section {
     padding: 20px 0; 
 }
@@ -291,8 +352,16 @@ ul li a:hover::before{
     font-size: 1.2em;
     padding: 8px 15px;
     background-color: var(--color-bg-gray);
-    border-radius: 15px;
-    color: #333;
+    border-radius: 50px;
+    color: #f5b9b9;
+    transition: 1s;
+    background-color: #9d0f0f; 
+}
+
+.news-title-bar:hover {
+    background-color: #f5b9b9;
+    transition: 1s;
+    color: #9d0f0f;
 }
 
 .news-grid {
@@ -302,78 +371,98 @@ ul li a:hover::before{
 }
 
 .news-item {
-    background-color: var(--color-news-box); 
+    background-color: #ffd3d3b6; 
     border: 1px solid var(--color-border);
     border-radius: 8px; 
-    padding: 10px;
+    padding: 0; 
     position: relative; 
     overflow: hidden; 
-    height: 160px; 
+    height: 330px; 
+    cursor: pointer;
 }
 
-.galeria{
-
-width: 250px;
-
-    margin: 0 auto 20px auto; 
-
-    text-align: center;
-
-    font-size: 1.2em;
-
-    padding: 8px 15px;
-
-    background-color: var(--color-bg-gray);
-
-    border-radius: 15px;
-
-    color: #333;
+/* Contenedor de la imagen para asegurar el espacio */
+.news-item .news-image {
+    position: absolute; 
+    top: 5px; 
+    left: 5px; 
+    width: calc(100% - 10px); 
+    height: var(--news-image-height); 
+    object-fit: cover; 
+    border-radius: 6px; 
+    display: block; 
+    border: 1px solid var(--color-border); 
 }
 
-.news-item::before {
-    content: "";
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    right: 5px;
-    height: 60px; 
-    background-color: white;
-    border-radius: 6px;
-    border: 1px solid var(--color-border);
+/* Contenido de texto de la noticia */
+.news-content {
+    position: absolute; 
+    top: calc(var(--news-image-height) + 15px); 
+    left: 10px; 
+    right: 10px;
+    padding-left: 50px; 
+    height: calc(100% - var(--news-image-height) - 25px); /* Ajusta si es necesario */
+    overflow: hidden; /* Oculta el texto si se desborda */
 }
 
+/* El ícono circular */
 .news-image-placeholder {
     width: 40px; 
     height: 40px;
     background-color: var(--color-bg-gray); 
     border-radius: 50%; 
     position: absolute; 
-    top: 50px; 
+    top: calc(var(--news-image-height) + 10px); /* Ajustado para estar un poco por debajo de la imagen */
     left: 15px;
     z-index: 10;
     border: 1px solid var(--color-border);
-}
-
-.news-content {
-    position: absolute;
-    top: 75px; 
-    left: 10px;
-    right: 10px;
-    padding-left: 50px; 
+    object-fit: cover; 
 }
 
 .news-content h3 {
     font-size: 0.85em;
     margin-bottom: 3px;
-    color: #333; 
+    color: #9d0f0f; 
 }
 
 .news-content p {
     font-size: 0.75em;
     line-height: 1.3;
-    color: #555; 
+    color: #9d0f0f; 
 }
 
+/*MEDIA QUERIES (Responsividad)*/
+@media (max-width: 768px) {
+
+    .news-item {
+        height: 250px; 
+    }
+
+    .news-item .news-image {
+        height: var(--news-image-height); 
+    }
+
+    .news-image-placeholder {
+        top: calc(var(--news-image-height) + 10px); 
+    }
+
+    .news-content {
+        top: calc(var(--news-image-height) + 15px); 
+        height: calc(100% - var(--news-image-height) - 25px); 
+    }
+}
+
+.news-content h3 {
+    font-size: 0.85em;
+    margin-bottom: 3px;
+    color: #9d0f0f; 
+}
+
+.news-content p {
+    font-size: 0.75em;
+    line-height: 1.3;
+    color: #9d0f0f; 
+}
 /* --- BANNER INTERMEDIO (Sin cambios) --- */
 .banner-intermediate {
     height: 180px;
@@ -389,7 +478,7 @@ width: 250px;
     font-size: 2em;
 }
 
-/* --- CONTENIDO INFERIOR (GALERÍA Y CALENDARIO) (Sin cambios) --- */
+/*CONTENIDO INFERIOR (GALERÍA Y CALENDARIO) (Sin cambios) */
 .bottom-content-container {
     padding: 0 20px 20px 20px;
 }
@@ -425,7 +514,6 @@ border-radius: 10%;
     display: flex;
     flex-direction: column;
     gap: 10px;
-      
     border-radius: 10%;
 }
 
@@ -434,6 +522,84 @@ border-radius: 10%;
     background-color: var(--color-bg-light);
     border: 1px solid var(--color-border);
 }
+
+.wrapper {
+    width: 100%;
+    min-height: 0vh;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25%;
+}
+.navbar {
+    background: #fdfdfd;
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 0px 15px;
+    box-shadow: 0px 20px 40px rgba(18, 34, 64, 0.1);
+    border-radius: 30px;
+    position: relative;
+}
+.navbar__item {
+    width: 70px;
+    height: 70px;
+    position: relative;
+    cursor: pointer;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+}
+.navbar__item::before, .navbar__item:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: currentColor;
+    border-radius: 50%;
+    transform: scale(0.8);
+    opacity: 0;
+    transition: all 0.55s cubic-bezier(0.71, 0.03, 0.23, 0.95);
+}
+.navbar__item::after {
+    box-shadow: 0 7px 15px currentColor;
+}
+.navbar__item.-blue {
+    color: #06b8ff;
+}
+.navbar__item.-orange {
+    color: #f2704d;
+}
+.navbar__item.-navy-blue {
+    color: #405fff;
+}
+.navbar__item.-black {
+    color: #e432f1;
+}
+.navbar__item:hover::before, .navbar__item:hover::after {
+    transform: translateY(-58px) scale(1.1);
+}
+.navbar__item:hover::before {
+    opacity: 1;
+}
+.navbar__item:hover::after {
+    opacity: 0.4;
+}
+.navbar__item:hover .navbar__icon {
+    transform: translateY(-58px) scale(1.25);
+    color: #fff;
+    transition-delay: 0.1s, 0.1s;
+}
+.navbar__icon {
+    transition: all 0.5s cubic-bezier(0.71, 0.03, 0.23, 0.95);
+    transition-delay: 0.1s;
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+}
+
 
 .related-news {
     grid-column: 2 / 3;
@@ -447,68 +613,233 @@ border-radius: 10%;
     background-color: var(--color-bg-light);
     border: 1px solid var(--color-border);
     padding: 10px;
-
-  border-radius: 10%;
+    border-radius: 10%;
 }
 
-.calendar-events-section {
-    display: grid;
-    grid-template-columns: 2fr 1fr; 
-    gap: 20px;
-    margin-top: 40px;
-    border-top: 1px solid var(--color-border);
-    padding-top: 20px;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.calendario {
+    background: #9d0f0f;
+    width: 450px;
+    border-radius:10px;
+    margin-left: 10%;
 }
 
-.calendar-container h2 {
-    font-size: 1.2em;
-    margin-bottom: 10px;
+.calendario header {
+    display: flex;
+    align-items: center;
+    padding: 25px 30px 10px;
+    justify-content: space-between;
+}
+
+header .current-date {
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+header .icons span {
+    padding: 10px;
+    color: #ffffff;
+    font-size:1.5rem;
+    margin:0 1px;
+    border-radius:50px;
+    font-weight:800;
+    cursor: pointer;
+}
+
+header .icons span:hover {
+    background: #ffffff;
+    color: red;
+}
+
+header .icons span:last-child {
+    margin-right: -10px;
 }
 
 .calendar {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    text-align: center;
-    border: 1px solid var(--color-border);
-    font-size: 0.8em; 
+    padding: 20px;
 }
 
-.day-header {
-    background-color: #eee;
-    padding: 5px 0;
-    font-size: 0.9em;
-    font-weight: bold;
-}
-
-.day {
-    padding: 8px 0;
-    border: 1px solid #eee;
-    font-size: 1em;
-}
-
-.day.special {
-    color: var(--color-u);
-    font-weight: bold;
-}
-
-.events-list {
+.calendar ul {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    list-style: none;
+    flex-wrap: wrap;
+    text-align: center;
 }
 
-.event-item {
-    height: 80px;
-    background-color: var(--color-bg-light);
-    border: 1px solid var(--color-border);
-    padding: 10px;
+.calendar .weeks li {
+    font-weight: bold;
+    color: #ffffff;
+    font-weight: 700;
 }
 
-/* --- PIE DE PÁGINA (Sin cambios) --- */
+.calendar .days {
+    margin-bottom:30px;
+    font-weight: 700;
+}
+
+.calendar .days li {
+    margin-top: 30px;
+    z-index: 1;
+    cursor: pointer;
+    color: #ffffff; /
+}
+
+.days li.inactive {
+    color: #ffffff7b; 
+}
+
+.days li.active {
+    color: red; 
+}
+
+.calendar ul li {
+    position: relative;
+    width:calc(100% / 7) 
+}
+
+.calendar .days li::before {
+    position: absolute;
+    content: "";
+    height: 40px;
+    width: 40px;
+    top: 50%;
+    left: 50%;
+    z-index:-1;
+    border-radius:50%;
+    transform: translate(-50%, -50%);
+}
+
+.days li:hover {
+    color: red; 
+}
+
+.days li:hover::before {
+    background: #f2f2f2;
+}
+
+.days li.inactive:hover {
+    color: #5d6d7e; 
+}
+
+.days li.active:hover {
+    color: #ffffff; 
+}
+
+.days li.active::before {
+    background: #ffffff; 
+}
+
+.days li:hover:not(.inactive) {
+    color: red; 
+}
+
+/* --- Estilos para el Modal --- */
+
+/* La capa oscura que cubre la pantalla */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); 
+    display: none; 
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; 
+}
+
+/* El cuadro de diálogo principal */
+.modal-content {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    width: 350px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.47);
+    position: relative;
+    text-align: center;
+    border-top: 5px solid #9d0f0f; 
+}
+
+/* Encabezado de la fecha */
+#modalDate {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #9d0f0f; 
+    margin-bottom: 10px;
+}
+
+/* Texto del evento */
+#modalText {
+    font-size: 1.5rem;
+    color: #000000;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    font-weight: 300;
+    cursor: pointer;
+    color: #d97bff;
+}
+
+.close-button:hover {
+    color: #d97bff;
+}
+
+
+.calendar .days li.has-celebration {
+    position: relative; 
+}
+
+.calendar .days li.has-celebration::after {
+    content: '🎉'; /* ¡El gorrito de fiesta o el emoji que prefieras! */
+    position: absolute;
+    top: -20px; 
+    left: 55%;
+    transform: translateX(-50%);
+    font-size: 1.2rem; 
+    z-index: 2; 
+    pointer-events: none; 
+}
+
+.calendar .days {
+    margin-bottom: 30px;
+    padding-top: 10px; 
+}
+    /* --- Estilo para Marcar el Día de HOY --- */
+
+.days li.is-today {
+    color: #ffffff; 
+    font-weight: bold;
+}
+
+.days li.is-today::before {
+    border: 2px solid #00ff6a; 
+    background: transparent; 
+}
+
+/* Combinación: Si el día de HOY es también el día SELECCIONADO */
+.days li.is-today.active {
+    color: red; /* El texto sigue siendo blanco */
+}
+
+.days li.is-today.active::before {
+    /* Conserva el estilo del día activo pero con el borde */
+    background: #ffffff; 
+    border: 2px solid #10ff74; 
+}
+
+/* PIE DE PÁGINA */
 .main-footer {
     text-align: center;
     padding: 20px;
     border-top: 1px solid var(--color-border);
+    background-color: #9d0f0f;
 }
 
 .main-footer h2 {
@@ -520,7 +851,7 @@ border-radius: 10%;
     justify-content: center;
 }
 
-/* --- MEDIA QUERIES (Responsividad) --- */
+/* MEDIA QUERIES (Responsividad)  */
 
 @media (max-width: 768px) {
     body {
@@ -624,4 +955,8 @@ border-radius: 10%;
     .bottom-content-container {
         padding: 0 10px 20px 10px; 
     }
+}
+
+.menu-toggle {
+    display: none; 
 }
