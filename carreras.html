@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="carreras.css">
+  <title>Universidad José María Vargas - Carreras</title>
+  <link rel="short icon" href="/Imagenes/icon.png">
+</head>
+<body>
+  <body>
+
+    <header class="main-header">
+        <button class="menu-toggle" aria-label="Abrir menú"></button>  
+        <div class="logo">
+        <img src="/Imagenes/Logo Universidad.png">
+    </div>
+<nav class="main-menu">
+
+        <a href="/index.html" class="efecto-link">Inicio</a>
+        <a href="/nosotros.html" class="efecto-link">Quienes Somos</a>
+        <a href="/carreras.html" class="efecto-link">Carreras</a>
+        <a href="#portal" class="efecto-link">Portal</a>
+        <a href="#noticias" class="efecto-link">Noticias</a>
+        <a href="#contacto" class="efecto-link">Contacto</a>
+    </nav>
+
+<!--<nav>
+        <div class="mobile-menu">
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Quiénes somos</a></li>
+                <li><a href="#">Carreras</a></li>
+                <li><a href="#">Portal</a></li>
+                <li><a href="#">Noticias</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </div>
+        </nav>-->
+    </header>
+
+    <div class="maria">
+        <div class="container">
+        <div class="panel active" style="background-image: url('Imagenes/BANNER\ 1\ MASCOTA.jpg')">
+            <h3>Mi Primera Imagen</h3>
+        </div>
+        <div class="panel" style="background-image: url('Imagenes/carru\ 2.jpg')">
+            <h3>Mi Segunda Imagen</h3>
+        </div>
+        <div class="panel" style="background-image: url('Imagenes/carru\ 3.jpg')">
+            <h3>Mi Tercera Imagen</h3>
+        </div>
+        <div class="panel" style="background-image: url('Imagenes/banner\ de\ pw\ UJMV.png')">
+            <h3>Mi Cuarta Imagen</h3>
+        </div>
+        <div class="panel" style="background-image: url('Imagenes/carru\ 5.jpg')">
+            <h3>Mi Quinta Imagen</h3>
+        </div>
+        </div>
+        <script src="app.js"></script>
+        <script>
+        const panels = document.querySelectorAll('.panel')
+
+        panels.forEach(panel => {
+            panel.addEventListener('click', () => {
+            removeActiveClasses()
+            panel.classList.add('active')
+            })
+        })
+
+        function removeActiveClasses() {
+            panels.forEach(panel => {
+            panel.classList.remove('active')
+            })
+        }
+        </script>
+        <script>
+        const panel = document.querySelectorAll('.panel');
+        let currentIndex = 0; // Índice para seguir qué panel está activo
+        const intervalTime = 4000; // 4000ms = 4 segundos de espera
+
+        // Función para quitar la clase 'active' de todos los paneles
+        function removeActiveClasses() {
+            panels.forEach(panel => {
+                panel.classList.remove('active');
+            });
+        }
+
+        // Función para activar el siguiente panel
+        function activateNextPanel() {
+            // 1. Quitar la clase 'active' del panel actual
+            removeActiveClasses();
+
+            // 2. Mover al siguiente índice. Usa el operador módulo (%) para
+            //    volver al inicio (0) cuando llegues al final.
+            currentIndex = (currentIndex + 1) % panels.length;
+
+            // 3. Añadir la clase 'active' al nuevo panel
+            panels[currentIndex].classList.add('active');
+        }
+
+        // Agrega el evento 'click' a cada panel para la interacción manual
+        panels.forEach((panel, index) => {
+            panel.addEventListener('click', () => {
+                // Detenemos el carrusel automático al hacer clic para dar control al usuario
+                clearInterval(autoAdvance);
+                
+                // Activamos el panel seleccionado
+                removeActiveClasses();
+                panel.classList.add('active');
+                
+                // Actualizamos el índice para que el carrusel continúe desde este punto si se reanuda
+                currentIndex = index; 
+            });
+        });
+
+
+        // Usa setInterval() para llamar a activateNextPanel() cada 3 segundos
+        const autoAdvance = setInterval(activateNextPanel, intervalTime);
+        </script>
+</div>
+
+
+    <footer class="main-footer">
+        <div class="logo">
+            <img src="/Imagenes/Logo Universidad.png" alt="Logo Universidad José María Vargas">
+        </div>
+    </footer>
+
+</body>
+</body>
+</html>

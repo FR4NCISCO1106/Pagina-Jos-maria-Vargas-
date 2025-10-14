@@ -17,9 +17,9 @@
     </div>
 <nav class="main-menu">
 
-        <a href="#inicio" class="efecto-link">Inicio</a>
+        <a href="/index.html" class="efecto-link">Inicio</a>
         <a href="/nosotros.html" class="efecto-link">Quienes Somos</a>
-        <a href="#carreras" class="efecto-link">Carreras</a>
+        <a href="/carreras.html" class="efecto-link">Carreras</a>
         <a href="#portal" class="efecto-link">Portal</a>
         <a href="#noticias" class="efecto-link">Noticias</a>
         <a href="#contacto" class="efecto-link">Contacto</a>
@@ -122,6 +122,7 @@
         <section class="section-historia">
             <div class="historia-contenido">
                 <h2>Nuestra Historia</h2>
+                <br>
                 <h3>Universidad José María Vargas: Un Legado de Pasión y Visión</h3>
                 <p class="justificado">La Universidad José María Vargas se alza en el paisaje venezolano como una historia de visión, pasión y compromiso con el futuro del país. Su fundación es el resultado directo del fervor incomparable de dos líderes por la educación y el progreso: Lourdes Díaz Gorrín y Enrique Parra Bozo.</p>
                 <p class="justificado">En un contexto de importantes cambios nacionales, Lourdes y Enrique concibieron una institución que no solo ofreciera educación superior de calidad, sino que también formara profesionales orientados al desarrollo sostenible de Venezuela. Reconociendo la importancia de invertir en el potencial de los jóvenes, y motivados por la figura histórica de José María Vargas —el prominente médico, científico y educador del siglo XIX—, decidieron nombrar la universidad en su honor.</p>
@@ -134,90 +135,179 @@
 
 
     <main>
-        <section>
+        <section class="slideshow-container">
+            <button class="prev-button" onclick="changeSlide(-1)">&#10094;</button>
+
             <div class="slideshow">
-    
-                <div class="slide">
+                <div class="slide" data-index="0">
                     <div class="content">
-                        <h2>Coche</h2>
-                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, excepturi illum dolores ea numquam tenetur ducimus expedita in maiores. Cupiditate adipisci quisquam non harum suscipit provident aliquam nostrum magni beatae!</span>
+                        <h2>MISIÓN</h2>
+                        <span>Formar profesionales con conocimiento y liderazgo en los niveles de pregrado, posgrado y certificado, mediante programas académicos de alta calidad y orientación práctica. Nuestro compromiso es generar impacto positivo en la sociedad, ofreciendo modalidades de estudio flexibles (tradicional y en línea) que responden a las exigencias del desarrollo sostenible y el progreso de Venezuela.</span>
                     </div>
                     <div class="image-wrapper">
                         <img src="https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
                     </div>
                 </div>
-                <div class="slide">
+                <div class="slide" data-index="1">
                     <div class="content">
-                        <h2>Patio</h2>
-                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, excepturi illum dolores ea numquam tenetur ducimus expedita in maiores. Cupiditate adipisci quisquam non harum suscipit provident aliquam nostrum magni beatae!</span>
+                        <h2>VISIÓN</h2>
+                        <span>Ser la institución educativa líder en el bienestar ciudadano latinoamericano, respondiendo proactivamente a las necesidades y expectativas de la comunidad. Logramos esto mediante la implementación de prácticas comunitarias sólidas, facilitando el uso de nuestras instalaciones y tecnología de vanguardia, y proyectando nuestro impacto y conocimiento a través de diversos medios a toda la región.</span>
                     </div>
                     <div class="image-wrapper">
                         <img src="https://images.pexels.com/photos/2325510/pexels-photo-2325510.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
                     </div>
                 </div>
-                <div class="slide">
-                    <div class="content">
-                        <h2>Ciudad</h2>
-                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, excepturi illum dolores ea numquam tenetur ducimus expedita in maiores. Cupiditate adipisci quisquam non harum suscipit provident aliquam nostrum magni beatae!</span>
-                    </div>
-                    <div class="image-wrapper">
-                        <img src="https://images.pexels.com/photos/169647/pexels-photo-169647.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
-                    </div>
-                </div>
-    
             </div>
-        </section>
 
+            <button class="next-button" onclick="changeSlide(1)">&#10095;</button>
+        </section>
     </main>
 
-    <script>// Slideshow
+    <script>// Guardar como script.js
 const slideshow = document.querySelector(".slideshow");
-// Conjunto de diapositivas
 const slides = slideshow.querySelectorAll(".slide");
-// Variable para saber cual es la diapositiva que se va a mostrar
-let currentSlide = 0;
-// Variable para sumar o restar a la propiedad translateX encargada del posicionamiento del slideshow
+const totalSlides = slides.length;
+
+let currentSlideIndex = 0;
 let sliderOffset = 0;
 
-setInterval(() => {
-    // Si la diapositiva actual llega al final, entonces empieza de nuevo.
-    if (currentSlide === (slides.length - 1)) {
-        currentSlide = 0;
-        sliderOffset = 0;
-    } else {
-        currentSlide++;
-        sliderOffset -= 100;
+// Función para actualizar la diapositiva
+function updateSlides() {
+    // 1. Calcular el desplazamiento necesario. Cada slide ocupa el 100% del contenedor.
+    sliderOffset = -100 * currentSlideIndex;
+
+    // 2. Aplicar la traslación al contenedor del slideshow.
+    slideshow.style.transform = `translateX(${sliderOffset}%)`;
+
+    // 3. Manejar la opacidad de los slides
+    slides.forEach((slide, index) => {
+        if (index === currentSlideIndex) {
+            slide.style.opacity = 1;
+        } else {
+            slide.style.opacity = 0;
+        }
+    });
+}
+
+function changeSlide(direction) {
+
+
+    let nextIndex = currentSlideIndex + direction;
+
+
+    if (nextIndex >= totalSlides) {
+        nextIndex = 0; 
+    } else if (nextIndex < 0) {
+        nextIndex = totalSlides - 1; 
     }
 
-    // Ocultamos todas las diapositivas
-    slides.forEach((slide) => slide.style.opacity = 0);
-    // Mostramos la diapositiva correspondiente
-    slides[currentSlide].style.opacity = 1;
-    // Actualizamos la traslación del slideshow
-    slideshow.style.transform = `translateX(${sliderOffset}%)`;
-}, 2500)</script>
+
+    currentSlideIndex = nextIndex;
 
 
-<section class="section-valores">
-            <h2 class="section-title">Valores</h2>
-            <div class="valores-grid">
-                
-                <div class="valor-card">
-                    <div class="valor-icon"></div> <p class="valor-text">Liderazgo</p>
-                </div>
-                
-                <div class="valor-card">
-                    <div class="valor-icon"></div> 
-                    <p class="valor-text">Compromiso</p>
-                </div>
-                
-                <div class="valor-card">
-                    <div class="valor-icon"></div> 
-                    <p class="valor-text">Excelencia</p>
-                </div>
-                
+    updateSlides();
+}
+
+document.addEventListener('DOMContentLoaded', updateSlides);
+</script>
+<br>
+    <h2>NUESTROS VALORES</h2>
+    <div class="contenedor">
+        
+        <div class="card" id="card-1">
+            <div class="card-image" style="background-color: #9d0f0f;">
+                <img src="https://s5-onboarding-digital-angular.vercel.app/assets/time_managment.svg" alt="Imagen de la escena 1">
             </div>
-        </section>
+            <div class="card-content">
+                <h3>Excelencia y liderazgo</h3>
+                <p> La UJMV ha mantenido una tradición de ofrecer una formación superior de calidad, evolucionando constantemente para adaptarse a las necesidades de la sociedad.</p>
+                <div class="card-navigation">
+                    <div>
+                        <span class="dot active-dot"></span> <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="card-2">
+            <div class="card-image" style="background-color: #9d0f0f;">
+                <img src="https://s5-onboarding-digital-angular.vercel.app/assets/remote_job.svg" alt="Imagen de la escena 2">
+            </div>
+            <div class="card-content">
+                <h3>Visión innovadora</h3>
+                <p>Visión innovadora: La universidad se ha guiado por una visión que busca nuevos horizontes en la educación, preparando a los estudiantes para el futuro.</p>
+                <div class="card-navigation">
+                    <div>
+                        <span class="dot"></span>
+                        <span class="dot active-dot"></span> <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="card-3">
+            <div class="card-image" style="background-color: #9d0f0f;">
+                <img src="https://s5-onboarding-digital-angular.vercel.app/assets/team_management.svg" alt="Imagen de la escena 3">
+            </div>
+            <div class="card-content">
+                <h3>Compromiso con la educación</h3>
+                <p>:La institución se ha edificado sobre la creencia en el poder transformador de la educación para crear un futuro mejor.</p>
+                <div class="card-navigation">
+                    <div>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot active-dot"></span> <span class="dot"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="card-4">
+            <div class="card-image" style="background-color:#9d0f0f;">
+                <img src="https://s5-onboarding-digital-angular.vercel.app/assets/collaboration.svg" alt="Imagen de la escena 4">
+            </div>
+            <div class="card-content">
+                <h3>Desarrollo integral </h3>
+                <p>La UJMV se centra en el crecimiento completo de las personas, no solo en la formación profesional, promoviendo el conocimiento y el progreso. </p>
+                <div class="card-navigation">
+                    <div>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot active-dot"></span> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            // Inicialmente quitamos todos los puntos activos para que solo el hover los controle
+            $('.contenedor .dot').removeClass('active-dot'); 
+
+            // Cuando el mouse entra a cualquier tarjeta
+            $('.card').hover(function() {
+                // 1. Quita la clase 'active-dot' de TODOS los puntos
+                $('.contenedor .dot').removeClass('active-dot');
+
+                // 2. Determina qué tarjeta es (por su ID, ej: 'card-2' -> 2)
+                const cardId = $(this).attr('id').split('-')[1]; 
+                const dotIndex = parseInt(cardId) - 1; // El índice del punto es 0-basado
+
+                // 3. Añade la clase 'active-dot' al punto correspondiente dentro de la tarjeta
+                // Selecciona el contenedor de navegación de la tarjeta actual y luego el punto por índice
+                $(this).find('.card-navigation div .dot').eq(dotIndex).addClass('active-dot');
+
+            }, function() {
+                // Cuando el mouse sale de la tarjeta
+                $('.contenedor .dot').removeClass('active-dot');
+            });
+        });
+    </script>
+
 
     <footer class="main-footer">
         <div class="logo">
