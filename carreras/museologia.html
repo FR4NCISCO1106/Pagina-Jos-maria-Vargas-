@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/estilos-carreras/museologia.css">
+    <title>Universidad José María Vargas - Museología</title>
+    <link rel="short icon" href="/Imagenes/icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <button class="menu-toggle" aria-label="Abrir menú"></button>  
+        <div class="logo">
+            <img src="/Imagenes/Logo Universidad.png">
+        </div>
+        <nav class="main-menu">
+        <a href="/index.html" class="efecto-link">Inicio</a>
+        <a href="/nosotros.html" class="efecto-link">Quienes Somos</a>
+        <a href="/carreras.html" class="efecto-link">Carreras</a>
+        <a href="/portal.html" class="efecto-link">Portal</a>
+        <a href="/noticias.html" class="efecto-link">Noticias</a>
+        <a href="/contacto.html" class="efecto-link">Contacto</a>
+        </nav>
+    </header>
+
+    <div class="maria">
+        <div class="container">
+            <div class="panel active" style="background-image: url('/Imagenes/BANNER\ 1\ MASCOTA.jpg')">
+                <h3>Mi Primera Imagen</h3>
+            </div>
+            <div class="panel" style="background-image: url('Imagenes/carru 2.jpg')">
+                <h3>Mi Segunda Imagen</h3>
+            </div>
+            <div class="panel" style="background-image: url('Imagenes/carru 3.jpg')">
+                <h3>Mi Tercera Imagen</h3>
+            </div>
+            <div class="panel" style="background-image: url('/Imagenes/banner\ de\ pw\ UJMV.png')">
+                <h3>Mi Cuarta Imagen</h3>
+            </div>
+            <div class="panel" style="background-image: url('Imagenes/carru 5.jpg')">
+                <h3>Mi Quinta Imagen</h3>
+            </div>
+        </div>
+        
+        <script src="app.js"></script>
+        <script>
+            // Código del carrusel (MANTENIDO):
+            const panels = document.querySelectorAll('.panel');
+            let currentIndex = 0; 
+            const intervalTime = 4000; 
+
+            function removeActiveClasses() {
+                panels.forEach(panel => {
+                    panel.classList.remove('active');
+                });
+            }
+
+            function activateNextPanel() {
+                removeActiveClasses();
+                currentIndex = (currentIndex + 1) % panels.length;
+                panels[currentIndex].classList.add('active');
+            }
+
+            panels.forEach((panel, index) => {
+                panel.addEventListener('click', () => {
+                    clearInterval(autoAdvance);
+                    removeActiveClasses();
+                    panel.classList.add('active');
+                    currentIndex = index; 
+                });
+            });
+
+            const autoAdvance = setInterval(activateNextPanel, intervalTime);
+        </script>
+    </div>
+
+    <section class="carrera-content">
+        <h1 class="titulo-carrera">Museología</h1>
+        
+        <div class="botones-info">
+            <a href="#aplicacion" class="btn-info btn-aplicacion">Aplicación</a>
+            <button id="btnPensum" class="btn-info btn-pensum">Pensum</button>
+        </div>
+
+        <div class="seccion-texto">
+            <h2>Descripción</h2>
+            <p>La Licenciatura en Museología de la Universidad José María Vargas se dedica a la formación de profesionales especializados en la gestión, conservación y difusión del patrimonio cultural y artístico albergado en museos y otras instituciones afines. Este programa académico ofrece una comprensión profunda de la importancia de los museos en la sociedad, así como de las técnicas y métodos modernos para su adecuada administración y promoción.</p>
+            <p>Los estudiantes explorarán la historia y evolución de los museos, aprenderán sobre técnicas avanzadas de conservación y restauración, y estudiarán estrategias de exhibición y educación que atraigan y eduquen al público de manera efectiva.</p>
+        </div>
+        
+        <div class="seccion-texto">
+            <h2>Principales áreas de estudio:</h2>
+            <ul>
+              <li>Historia de los Museos y Coleccionismo.</li>
+              <li>Conservación y Restauración de Objetos Patrimoniales. </li>
+              <li>Diseño y Montaje de Exposiciones.</li>
+              <li>Educación y Mediación Cultural en Museos.</li>
+              <li>Gestión y Administración de Museos.</li>
+              <li>Museografía y Técnicas de Exhibición.</li>
+              <li>Estudios de Público y Marketing Cultural.</li>
+            </ul>
+        </div>
+
+        <div class="seccion-texto">
+            <h2>Perfil del Egresado</h2>
+            <p>El egresado de la Licenciatura en Museología de la Universidad José María Vargas será un profesional con una sólida formación teórica y práctica, capaz de gestionar museos y colecciones de manera responsable y creativa. Tendrá las habilidades necesarias para diseñar exposiciones atractivas y educativas, conservar adecuadamente el patrimonio y conectar los museos con la comunidad y los visitantes de todas las edades.</p>
+        </div>
+
+                <div class="seccion-texto">
+            <h2>Oportunidades laborales</h2>
+            <p>El licenciado en Museología puede integrarse en:</p>
+              <ul>
+              <li>Museos de arte, historia, ciencia, y otras especialidades.</li>
+              <li>Centros culturales y galerías. </li>
+              <li>Instituciones de conservación y restauración. </li>
+              <li>Organizaciones y proyectos de patrimonio cultural.</li>
+              <li>CConsultoría en proyectos museográficos y culturales.</li>
+              <li>Investigación y docencia en el campo de la museología.</li>
+            </ul>
+            <br>
+            <p>Con la Licenciatura en Museología de la Universidad José María Vargas, los estudiantes están preparados para ser guardianes y promotores del patrimonio cultural, desempeñando un papel vital en la educación y enriquecimiento de la sociedad.</p>
+        </div>
+        </div>
+
+    </section>
+    <div id="modalPensum" class="modal-pensum">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <img src="/Imagenes/Pensum de Museologia png .png" alt="Pensum de Arquitectura" class="flyer-pensum">
+        </div>
+    </div>
+    
+    <script>
+        // NUEVO: Lógica JavaScript para el Modal
+        const modal = document.getElementById('modalPensum');
+        const btn = document.getElementById('btnPensum');
+        const span = document.getElementsByClassName('close-btn')[0];
+
+        // Cuando el usuario hace clic en el botón, abre el modal
+        btn.onclick = function() {
+            modal.style.display = 'flex';
+        }
+
+        // Cuando el usuario hace clic en (x), cierra el modal
+        span.onclick = function() {
+            modal.style.display = 'none';
+        }
+
+        // Cuando el usuario hace clic fuera del modal, lo cierra
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+
+    <br>
+    
+    <section class="game-section">
+        <h2 class="line-title">Galería de fotos</h2>
+        <div class="owl-carousel custom-carousel owl-theme">
+            <div class="item active" style="background-image: url(https://i.postimg.cc/bv65fWVn/ap23056634041243-12.jpg);">
+                <div class="item-desc">
+                    <h3>RB19</h3>
+                    <p>El Red Bull RB19 es un monoplaza de Fórmula 1 diseñado por Red Bull Racing para competir en la temporada 2023. El automóvil fue presentado en la ciudad de Nueva York el 3 de febrero de 2023. El monoplaza es conducido por Max Verstappen y Sergio Pérez.</p>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(https://i.postimg.cc/8kw7QHTS/ferrari-sf-23-1.jpg);">
+                <div class="item-desc">
+                    <h3>SF-23</h3>
+                    <p>El Ferrari SF-23 es un monoplaza de Fórmula 1 diseñado por Scuderia Ferrari para competir en la temporada 2023. El automóvil fue presentado en la ciudad de Imola el 14 de febrero de 2023. El monoplaza es conducido por Charles Leclerc y Carlos Sainz Jr..</p>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(https://i.postimg.cc/C1Sx9Zt5/0-4oe51bxj.jpg);">
+                <div class="item-desc">
+                    <h3>W14</h3>
+                    <p>El Mercedes-AMG F1 W14 E Performance es un monoplaza de Fórmula 1 diseñado y construido por Mercedes para disputar la temporada 2023. Es manejado por Lewis Hamilton y por George Russell.</p>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(https://i.postimg.cc/cHF0jFwk/0001189438-hires-04ncmbl0ts8neo03to4xt0st79mo.jpg);">
+                <div class="item-desc">
+                    <h3>A523</h3>
+                    <p>El Alpine A523 es un monoplaza de Fórmula 1 diseñado por Alpine F1 Team para competir en la temporada 2023. El automóvil fue presentado en la ciudad de Londres el 15 de febrero de 2023. El monoplaza es conducido por Pierre Gasly y Esteban Ocon.</p>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(https://i.postimg.cc/x8qnSLPf/AA17uD6G.jpg);">
+                <div class="item-desc">
+                    <h3>MCL60</h3>
+                    <p>El McLaren MCL60 es un monoplaza de Fórmula 1. Lando Norris y Oscar Piastri tienen contrato para competir con el equipo, Norris para su quinta temporada y Piastri en su año de novato.</p>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(https://i.postimg.cc/sf8RhQcW/alfa-romeo-sauber-c43-f1-2023-1.jpg);">
+                <div class="item-desc">
+                    <h3>C43</h3>
+                    <p>El Alfa Romeo C43 es un monoplaza de Fórmula 1 diseñado por Alfa Romeo para competir en la temporada 2023. El automóvil fue presentado en la ciudad de Zúrich el 7 de febrero de 2023. El monoplaza es conducido por Guanyu Zhou y Valtteri Bottas.</p>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(https://i.postimg.cc/2SCmkpG9/dd46203c-74f1-4ef0-8b5e-6392065b5671-alta-libre-aspect-ratio-default-0.jpg);">
+                <div class="item-desc">
+                    <h3>AMR23</h3>
+                    <p>El Aston Martin AMR23 es un monoplaza de Fórmula 1 diseñado por Aston Martin para competir en la temporada 2023. El automóvil fue presentado en la ciudad de Silverstone el 13 de febrero de 2023. El monoplaza es conducido por Fernando Alonso y Lance Stroll.</p>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(https://i.postimg.cc/hjdN8MM7/haas-vf-23-09-1675173869.jpg);">
+                <div class="item-desc">
+                    <h3>VF-23</h3>
+                    <p>El Haas VF-23 es un monoplaza de Fórmula 1 diseñado por Haas F1 Team para competir en la temporada 2023. La decoración fue presentada el 31 de enero de 2023. El coche es conducido por Kevin Magnussen y Nico Hülkenberg.</p>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(https://i.postimg.cc/KzfBWh9X/alpha-tauri-04-1.jpg);">
+                <div class="item-desc">
+                    <h3>AT04</h3>
+                    <p>El AlphaTauri AT04 es un monoplaza de Fórmula 1 diseñado por Scuderia AlphaTauri para competir en la temporada 2023. El automóvil fue presentado en la ciudad de Nueva York el 11 de febrero de 2023. El monoplaza es conducido por Nyck de Vries y Yuki Tsunoda.</p>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(https://i.postimg.cc/mkQDnYZP/7-Williams-2023-FW45.jpg);">
+                <div class="item-desc">
+                    <h3>FW45</h3>
+                    <p>El Williams FW45 es un monoplaza de Fórmula 1 diseñado y construido por Williams Racing para disputar la temporada 2023. Es manejado por Logan Sargeant, quien hace su debut absoluto en la «máxima categoría», y por Alexander Albon, quien disputa su segunda temporada con el equipo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <script>
+        $(".custom-carousel").owlCarousel({
+            autoWidth: true,
+            loop: true
+        });
+        $(document).ready(function () {
+            $(".custom-carousel .item").click(function () {
+                $(".custom-carousel .item").not($(this)).removeClass("active");
+                $(this).toggleClass("active");
+            });
+        });
+    </script>
+
+    <footer class="main-footer">
+        <div class="logo">
+            <img src="/Imagenes/Logo Universidad.png" alt="Logo Universidad José María Vargas">
+        </div>
+    </footer>
+</body>
+</html>
