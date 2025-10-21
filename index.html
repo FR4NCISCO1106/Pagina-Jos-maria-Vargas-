@@ -11,7 +11,7 @@
 <body>
 
     <header class="main-header">
-        <button class="menu-toggle" aria-label="Abrir menú"></button>  
+        <button class="menu-toggle" aria-label="Abrir menú"></button>  
         <div class="logo">
         <img src="/Imagenes/Logo Universidad.png">
     </div>
@@ -25,38 +25,21 @@
         <a href="/contacto.html" class="efecto-link">Contacto</a>
     </nav>
 
-<!--<nav>
-        <div class="mobile-menu">
-            <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Quiénes somos</a></li>
-                <li><a href="#">Carreras</a></li>
-                <li><a href="#">Portal</a></li>
-                <li><a href="#">Noticias</a></li>
-                <li><a href="#">Contacto</a></li>
-            </ul>
-        </div>
-        </nav>-->
-    </header>
+</header>
 
     <div class="maria">
         <div class="container">
-        <div class="panel active" style="background-image: url('Imagenes/BANNER\ 1\ MASCOTA.jpg')">
-            <h3>Mi Primera Imagen</h3>
+        <div class="panel active" style="background-image: url('Imagenes/BANNER\ 3\ MASCOTA.jpg')">
         </div>
-        <div class="panel" style="background-image: url('Imagenes/carru\ 2.jpg')">
-            <h3>Mi Segunda Imagen</h3>
+        <div class="panel" style="background-image: url('Imagenes/banner\ youtube.png')">
         </div>
-        <div class="panel" style="background-image: url('Imagenes/carru\ 3.jpg')">
-            <h3>Mi Tercera Imagen</h3>
+        <div class="panel" style="background-image: url('Imagenes/Carrusel.jpg')">
         </div>
-        <div class="panel" style="background-image: url('Imagenes/banner\ de\ pw\ UJMV.png')">
-            <h3>Mi Cuarta Imagen</h3>
+        <div class="panel" style="background-image: url('Imagenes/carrusel1.jpg')">
         </div>
-        <div class="panel" style="background-image: url('Imagenes/carru\ 5.jpg')">
-            <h3>Mi Quinta Imagen</h3>
+        <div class="panel" style="background-image: url('Imagenes/carrusel2.jpg')">
         </div>
-        </div>
+    </div>
         <script src="app.js"></script>
         <script>
         const panels = document.querySelectorAll('.panel')
@@ -92,7 +75,7 @@
             removeActiveClasses();
 
             // 2. Mover al siguiente índice. Usa el operador módulo (%) para
-            //    volver al inicio (0) cuando llegues al final.
+            //    volver al inicio (0) cuando llegues al final.
             currentIndex = (currentIndex + 1) % panels.length;
 
             // 3. Añadir la clase 'active' al nuevo panel
@@ -132,19 +115,19 @@
             <div class="content-left">
                 <section class="quick-links">
                     <div class="quick-link">
-                    <a href="/carreras/arquitectura.html"><img src="/Imagenes/icon.png" class="quick-link"></a>
+                    <a href="/carreras/arquitectura.html"><img src="/Imagenes/arquitectura fondo.png" class="quick-link"></a>
                         <span class="quick-link-label">Arquitectura</span>
                     </div>
                     <div class="quick-link">
-                    <a href="/carreras/diseño-grafico.html"><img src="/Imagenes/icon.png" class="quick-link"></a>
+                    <a href="/carreras/diseño-grafico.html"><img src="/Imagenes/diseño grafico fondo.png" class="quick-link"></a>
                         <span class="quick-link-label">Diseño Grafico</span>
                     </div>
                     <div class="quick-link">
-                    <a href="/carreras/museologia.html"><img src="/Imagenes/icon.png" class="quick-link"></a>
+                    <a href="/carreras/museologia.html"><img src="/Imagenes/museologia fondo.png" class="quick-link"></a>
                         <span class="quick-link-label">Museología</span>
                     </div>
                     <div class="quick-link">
-                    <a href="/carreras/diseño-industrial.html"><img src="/Imagenes/icon.png" class="quick-link"></a>
+                    <a href="/carreras/diseño-industrial.html"><img src="/Imagenes/diseño industrial fondo.png" class="quick-link"></a>
                         <span class="quick-link-label">Diseño Industrial</span>
                     </div>
                 </section>
@@ -152,58 +135,91 @@
     <h2 class="news-title-bar">Noticias</h2>
     <div class="news-grid">
         <div class="news-item">
-            <img src="/Imagenes" alt="Imagen de Noticia 1" class="news-image">
+            <img src="/Imagenes/top 3 curiosidades de la UJMV (Deportes).jpg" alt="Imagen de Noticia 1" class="news-image">
             
             <div><img src="/Imagenes/icon.png" alt="Icono" class="news-image-placeholder"></div>
             
             <div class="news-content">
-                <h3>Noticia</h3>
-                <p>Información de Noticia</p>
+                <h3>¡Rompiendo esquemas! El TOP 3 de Secretos de la UJMV que debes conocer.</h3>
+                <P>“Conjunto de Residencias Multifamiliares”</P>
+            <p>
+                La Universidad José María Vargas es un faro académico, pero ¿estás seguro de conocer
+                todo lo que ofrece? ¡Prepárate para sorprenderte! Revelamos el Top 3 de beneficios que
+                hacen única a esta casa de estudios.
+            </p>
             </div>
         </div>
         
         <div class="news-item">
-            <img src="ruta/imagen-noticia-2.jpg" alt="Imagen de Noticia 2" class="news-image">
+            <img src="/Imagenes/Nuevo ingreso fase B.jpg" alt="Imagen de Noticia 2" class="news-image">
             <div><img src="/Imagenes/icon.png" alt="Icono" class="news-image-placeholder"></div>
             <div class="news-content">
-                <h3>Noticia 1</h3>
-                <p>Información Noticia 1</p>
+                <h3>3. La UJMV da la Bienvenida: ¡Comenzó con Éxito el Taller de Iniciación Universitaria (Fase B)!</h3>
+                <p>“Conjunto de Residencias Multifamiliares”</p>
+                <p>El TIU (Taller de Iniciación Universitaria) es un componente crucial diseñado para facilitar la transición de los 
+                    bachilleres a la vida universitaria, proporcionándoles las herramientas
+                    esenciales para asegurar un desempeño académico exitoso. Este es el primer paso para
+                    que los estudiantes adquieran las destrezas académicas y personales necesarias para
+                    afrontar los retos de sus respectivas carreras, ya sea derecho, ingeniería, administración,
+                    educación, Higiene y seguridad Social, arquitectura, diseño industrial, diseño gráfico o
+                    museología.
+                    </p>
             </div>
         </div>
         
         <div class="news-item">
-            <img src="ruta/imagen-noticia-3.jpg" alt="Imagen de Noticia 3" class="news-image">
+            <img src="/Imagenes/Llegada de Santa Claus a la UJMV.jpg" alt="Imagen de Noticia 3" class="news-image">
             <div><img src="/Imagenes/icon.png" alt="Icono" class="news-image-placeholder"></div>
             <div class="news-content">
-                <h3>Noticia 2</h3>
-                <p>Información Noticia 2</p>
+                <h3>¡Santa Claus Viene a la UJMV! Lanza Gran Convocatoria de Donación de Juguetes para los Niños!</h3>
+                <p>El espíritu de la Navidad ya se siente en los pasillos de la Universidad José María Vargas
+                    (UJMV). Con el objetivo de regalar sonrisas en esta época decembrina, la institución se
+                    prepara para recibir al mismísimo Santa Claus en sus instalaciones de Los Dos Caminos y
+                    ha lanzado una campaña de recolección de juguetes para convertir el campus en un
+                    centro de alegría.
+                </p>
             </div>
         </div>
         
         <div class="news-item">
-            <img src="ruta/imagen-noticia-4.jpg" alt="Imagen de Noticia 4" class="news-image">
+            <img src="/Imagenes/Lives de instagram.jpg" alt="Imagen de Noticia 4" class="news-image">
             <div><img src="/Imagenes/icon.png" alt="Icono" class="news-image-placeholder"></div>
             <div class="news-content">
-                <h3>Noticia 3</h3>
-                <p>Información Noticia 3</p>
+                <h3>¡La UJMV en Vivo! Expertos Llevan el Debate Académico a Instagram</h3>
+                <p>
+                    La Universidad José María Vargas (UJMV) está utilizando su cuenta de Instagram, @ujmv_,
+                    como un foro de conocimiento abierto, realizando una serie de Lives educativos sobre
+                    temas clave de interés público y profesional,Estos espacios de interacción virtual permiten a estudiantes, 
+                    profesionales y al público en
+                    general acceder a conversatorios dinámicos dirigidos por expertos y docentes de la
+                    universidad.
+                </p>
             </div>
         </div>
         
         <div class="news-item">
-            <img src="ruta/imagen-noticia-5.jpg" alt="Imagen de Noticia 5" class="news-image">
+            <img src="/Imagenes/Feria navideña stands.jpg" alt="Imagen de Noticia 5" class="news-image">
             <div><img src="/Imagenes/icon.png" alt="Icono" class="news-image-placeholder"></div>
             <div class="news-content">
-                <h3>Información Noticia 4</h3>
-                <p>Información Noticia 4</p>
+                <h3>¡Enciende tu Negocio! La UJMV Anuncia su Gran Feria Navideña e Invita a Emprendedores a Reservar su Stand!</h3>
+                <p>La Universidad José María Vargas abrirá sus puertas al talento nacional con la celebración
+                    de su Gran Feria Navideña, un evento diseñado para impulsar la economía local y ofrecer
+                    a la comunidad un espacio vibrante para las compras decembrinas. No solamente podrás
+                    comprar o vender productos hermosos, deliciosos o valiosos, sino también podrás pasar
+                    un día deferente junto con tus seres queridos y la magia de la navidad.
+                </p>
             </div>
         </div>
         
         <div class="news-item">
-            <img src="ruta/imagen-noticia-6.jpg" alt="Imagen de Noticia 6" class="news-image">
+            <img src="/Imagenes/Diplomado en investigacion Latinoamericana.png" alt="Imagen de Noticia 6" class="news-image">
             <div><img src="/Imagenes/icon.png" class="news-image-placeholder"></div>
             <div class="news-content">
-                <h3>Noticia 5</h3>
-                <p>Información Noticia 5</p>
+                <h3>UJMV Impulsa Diplomado en Investigación Latinoamericana para Formar Líderes Científicos</h3>
+                <p>La UJMV está elevando el nivel de la investigación en Venezuela con el lanzamiento de su
+                    Diplomado en Investigación Latinoamericana, un programa de vanguardia diseñado para
+                    profesionales que buscan impactar el desarrollo académico y científico de la región.
+                </p>
             </div>
         </div>
     </div>
@@ -254,24 +270,27 @@
         
     </main>
     
-    <section class="banner-intermediate">
-        <h2>Banner 2</h2>
-    </section>
+    <section> <img src="/Imagenes/publicidad 1.jpg" class="banner-intermediate"></section>
 
     <div class="bottom-content-container">
 
         <section class="gallery-section">
             <h2 class="galeria">Galería de proyectos</h2>
             <div class="gallery-layout">
-                <div class="main-image"></div>
+                <div class="main-image">
+                    <img src="/ruta/a/tu/imagen-principal.jpg" alt="Imagen principal del proyecto" class="project-image">
+                </div>
+                <div class="project-description-wrapper">
+                    <div class="text-content">
+                        <h3>Título del Proyecto Aquí</h3>
+                        <p>Descripción detallada del proyecto. Por ejemplo: Este proyecto representa una colaboración innovadora entre los estudiantes de Arquitectura y Diseño Industrial, enfocado en el desarrollo de espacios sostenibles y modulares.</p>
+                    </div>
+                </div>
                 <div class="side-items">
                     <div class="side-item"></div>
                     <div class="side-item"></div>
                 </div>
-                <div class="text-content">
-                    <h3>fcajbqowno</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                </div>
+                
                 <div class="related-news">
                     <div class="news-preview">fcajbqowno</div>
                     <div class="news-preview">fcajbqowno</div>
@@ -279,10 +298,10 @@
             </div>
         </section>
 
+<div class="calendar-events-container">
     <div class="calendario">
         <header>
-            <p class="current-date">
-                </p> 
+            <p class="current-date"></p>
             <div class="icons">
                 <span id="prevIcon" class="leftIcon"><</span>
                 <span id="nextIcon" class="rightIcon">></span>
@@ -298,9 +317,16 @@
                 <li>Vie</li>
                 <li>Sab</li>
             </ul>
-            <ul class="days">
-                </ul>
+            <ul class="days"></ul>
         </div>
+    </div>
+
+    <div class="upcoming-events">
+        <h3 class="events-title">Próximos Eventos 🗓️</h3>
+        <ul id="upcomingEventsList">
+            <li>Cargando...</li>
+        </ul>
+    </div>
     </div>
     
     <div id="celebrationModal" class="modal-overlay">
@@ -311,184 +337,221 @@
         </div>
     </div>
 
-    <script> 
-const currentDateTitle = document.querySelector(".current-date"),
-        daysTag = document.querySelector(".days"),
-        prevNextIcons = document.querySelectorAll(".icons span");
-        
-
-const modal = document.getElementById('celebrationModal');
-const modalDateElement = document.getElementById('modalDate');
-const modalTextElement = document.getElementById('modalText');
-const closeButton = document.querySelector('.close-button');
-
-
-let selectedDate = null; 
-
-const celebrations = {
-    '2025-10-13': 'Día de la Reunificación!', 
-    '2025-10-15': 'Cumpleaños de María',
-    '2025-10-24': 'Aniversario de la Empresa',
-    '2025-10-31': 'Celebración de Halloween',
-    '2025-11-01': 'Día de Todos los Santos'
-};
-
-
-let date = new Date(),
-    currentYear = date.getFullYear(),
-    currentMonth = date.getMonth();
-
-const months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
-
-// Función para obtener la fecha de hoy formateada como YYYY-MM-DD
-const getTodayFormatted = () => {
-    const today = new Date();
-    const year = today.getFullYear();
-    const month = String(today.getMonth() + 1).padStart(2, '0');
-    const day = String(today.getDate()).padStart(2, '0');
-    return `${year}-${month}-${day}`;
-};
-
-const renderCalendar = () => {
-    const todayFormatted = getTodayFormatted(); // Fecha de hoy
-    
-    let firstDayOfMonth = new Date(currentYear, currentMonth, 1).getDay();
-    let lastDateOfMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
-    let lastDayOfMonth = new Date(currentYear, currentMonth, lastDateOfMonth).getDay();
-    let lastDateOfLastMonth = new Date(currentYear, currentMonth, 0).getDate();
-    let liDayTag = "";
-    
-    for (let i = firstDayOfMonth; i > 0; i--) {
-        liDayTag += `<li class="inactive">${lastDateOfLastMonth - i + 1}</li>`;
-    }
-    
-    for(let i = 1; i <= lastDateOfMonth; i++) {
-        // Formatear la fecha actual del bucle como 'YYYY-MM-DD'
-        const dayFormatted = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}-${String(i).padStart(2, '0')}`;
-        
-        let classes = '';
-
-        // 1. Marcar el día seleccionado
-        if (dayFormatted === selectedDate) {
-            classes = 'active';
-        }
-        
-        // 2. Marcar el día de HOY
-        if (dayFormatted === todayFormatted) {
-            // Usa una clase separada para "Hoy"
-            classes += (classes ? ' ' : '') + 'is-today'; 
-        }
-
-        // 3. Marcar el día con celebración
-        if (celebrations[dayFormatted]) {
-            classes += (classes ? ' ' : '') + 'has-celebration';
-        }
-        
-        liDayTag += `<li data-date="${dayFormatted}" class="${classes.trim()}">${i}</li>`;
-    }
-    
-    for (let i = lastDayOfMonth; i < 6; i++ ) {
-        liDayTag += `<li class="inactive">${i - lastDayOfMonth + 1}</li>`;
-    }
-    
-    currentDateTitle.innerText = `${months[currentMonth]} ${currentYear}`;
-    daysTag.innerHTML = liDayTag;
-    
-    // Agregar el listener después de renderizar los días
-    addDayClickListener();
-    
-    // Configurar la auto-actualización (Solo se llama una vez al cargar el calendario)
-    setupDailyRefresh();
-}
-
-// Función para configurar la actualización diaria automática
-const setupDailyRefresh = () => {
-    // 1. Calcular cuántos milisegundos faltan para el inicio del próximo día (medianoche)
-    const now = new Date();
-    const tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
-    const msUntilMidnight = tomorrow.getTime() - now.getTime();
-
-    // 2. Programar la recarga para el momento justo después de medianoche
-    setTimeout(() => {
-        // Al recargar la página, el script se ejecuta de nuevo y renderiza el calendario
-        window.location.reload(); 
-    }, msUntilMidnight);
-};
-
-
-const addDayClickListener = () => {
-    const allDays = daysTag.querySelectorAll('li:not(.inactive)');
-    
-    allDays.forEach(day => {
-        day.addEventListener('click', (e) => {
-            const dateClicked = e.target.getAttribute('data-date');
+<script> 
+        const currentDateTitle = document.querySelector(".current-date"),
+            daysTag = document.querySelector(".days"),
+            prevNextIcons = document.querySelectorAll(".icons span");
             
-            // Lógica para seleccionar UN SOLO DÍA
-            const previouslyActive = daysTag.querySelector('li.active');
-            if (previouslyActive) {
-                previouslyActive.classList.remove('active');
-            }
-
-            if (dateClicked !== selectedDate) {
-                e.target.classList.add('active');
-                selectedDate = dateClicked;
-            } else {
-                selectedDate = null;
-            }
-
-            showCelebration(dateClicked); 
-        });
-    });
-}
-
-// Función para mostrar el modal de celebración (Misma que antes)
-const showCelebration = (dateKey) => {
-    const celebrationText = celebrations[dateKey];
-
-    if (celebrationText) {
-        const dateParts = dateKey.split('-');
-        const year = dateParts[0];
-        const monthIndex = parseInt(dateParts[1]) - 1;
-        const day = dateParts[2];
-        const monthName = months[monthIndex];
-        
-        modalDateElement.innerText = `¡Evento para el ${day} de ${monthName} de ${year}!`;
-        modalTextElement.innerText = celebrationText;
-        modal.style.display = 'flex';
-    }
-}
-
-// Lógica para cerrar el modal (Misma que antes)
-const closeModal = () => {
-    modal.style.display = 'none';
-}
-
-closeButton.addEventListener('click', closeModal);
-
-modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-        closeModal();
-    }
-});
+        const modal = document.getElementById('celebrationModal');
+        const modalDateElement = document.getElementById('modalDate');
+        const modalTextElement = document.getElementById('modalText');
+        const closeButton = document.querySelector('.close-button');
 
 
-// Inicializar el calendario
-renderCalendar();
+        let selectedDate = null; 
 
-prevNextIcons.forEach(icon => {
-    icon.addEventListener("click", () => {
-        currentMonth = icon.id === "prevIcon" ? currentMonth-1 : currentMonth + 1;
-        
-        if (currentMonth < 0 || currentMonth > 11) {
-            date = new Date(currentYear, currentMonth);
-            currentYear = date.getFullYear();
+        // 🚨 Objeto de Celebraciones (Mantén tus fechas y textos aquí)
+        const celebrations = {
+            '2025-10-20': 'Diplomado en Impresión 3D', 
+            '2025-10-15': 'Diplomado en Adobe Lab.',
+            '2025-10-13': 'Diplomado de diseño de interiores.',
+            '2025-10-30': 'Curso Contabilidad básica',
+            '2025-10-24': 'Curso de Psicología Organizacional',
+            '2025-11-01': 'Curso de Redacción y Ortografía jurídica',
+        };
+
+
+        let date = new Date(),
+            currentYear = date.getFullYear(),
             currentMonth = date.getMonth();
+
+        const months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+
+        // Función para obtener la fecha de hoy formateada como YYYY-MM-DD
+        const getTodayFormatted = () => {
+            const today = new Date();
+            const year = today.getFullYear();
+            const month = String(today.getMonth() + 1).padStart(2, '0');
+            const day = String(today.getDate()).padStart(2, '0');
+            return `${year}-${month}-${day}`;
+        };
+
+        const renderCalendar = () => {
+            const todayFormatted = getTodayFormatted(); 
+            
+            let firstDayOfMonth = new Date(currentYear, currentMonth, 1).getDay();
+            let lastDateOfMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+            let lastDayOfMonth = new Date(currentYear, currentMonth, lastDateOfMonth).getDay();
+            let lastDateOfLastMonth = new Date(currentYear, currentMonth, 0).getDate();
+            let liDayTag = "";
+            
+            for (let i = firstDayOfMonth; i > 0; i--) {
+                liDayTag += `<li class="inactive">${lastDateOfLastMonth - i + 1}</li>`;
+            }
+            
+            for(let i = 1; i <= lastDateOfMonth; i++) {
+                const dayFormatted = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}-${String(i).padStart(2, '0')}`;
+                
+                let classes = '';
+
+                if (dayFormatted === selectedDate) {
+                    classes = 'active';
+                }
+                
+                if (dayFormatted === todayFormatted) {
+                    classes += (classes ? ' ' : '') + 'is-today'; 
+                }
+
+                if (celebrations[dayFormatted]) {
+                    classes += (classes ? ' ' : '') + 'has-celebration';
+                }
+                
+                liDayTag += `<li data-date="${dayFormatted}" class="${classes.trim()}">${i}</li>`;
+            }
+            
+            for (let i = lastDayOfMonth; i < 6; i++ ) {
+                liDayTag += `<li class="inactive">${i - lastDayOfMonth + 1}</li>`;
+            }
+            
+            currentDateTitle.innerText = `${months[currentMonth]} ${currentYear}`;
+            daysTag.innerHTML = liDayTag;
+            
+            addDayClickListener();
+            setupDailyRefresh();
         }
-        
+
+        const setupDailyRefresh = () => {
+            const now = new Date();
+            const tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
+            const msUntilMidnight = tomorrow.getTime() - now.getTime();
+
+            // Esto solo se ejecuta una vez para programar la recarga a medianoche
+            // setTimeout(() => { window.location.reload(); }, msUntilMidnight);
+        };
+
+        const addDayClickListener = () => {
+            const allDays = daysTag.querySelectorAll('li:not(.inactive)');
+            
+            allDays.forEach(day => {
+                day.addEventListener('click', (e) => {
+                    const dateClicked = e.target.getAttribute('data-date');
+                    
+                    const previouslyActive = daysTag.querySelector('li.active');
+                    if (previouslyActive) {
+                        if (!previouslyActive.classList.contains('is-today')) { 
+                            previouslyActive.classList.remove('active');
+                        }
+                    }
+
+                    if (dateClicked) {
+                        e.target.classList.add('active');
+                        selectedDate = dateClicked;
+                    } else {
+                        selectedDate = null;
+                    }
+
+                    // Llama al modal
+                    showCelebration(dateClicked); 
+                });
+            });
+        }
+
+        // Función para mostrar el modal de celebración (Funciona para calendario y lista)
+        const showCelebration = (dateKey) => {
+            const celebrationText = celebrations[dateKey];
+
+            if (celebrationText) {
+                const dateParts = dateKey.split('-');
+                const year = dateParts[0];
+                const monthIndex = parseInt(dateParts[1]) - 1;
+                const day = dateParts[2];
+                const monthName = months[monthIndex];
+                
+                modalDateElement.innerText = `¡Evento para el ${day} de ${monthName} de ${year}!`;
+                modalTextElement.innerText = celebrationText;
+                modal.style.display = 'flex';
+            }
+        }
+
+        // Lógica para cerrar el modal
+        const closeModal = () => {
+            modal.style.display = 'none';
+        }
+
+        closeButton.addEventListener('click', closeModal);
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+
+        // --- FUNCIÓN PARA EVENTOS PRÓXIMOS (ACTUALIZADA) ---
+        const renderUpcomingEvents = () => {
+            const today = getTodayFormatted();
+            const upcomingList = document.getElementById('upcomingEventsList');
+            upcomingList.innerHTML = ''; 
+
+            const celebrationArray = Object.entries(celebrations).map(([date, event]) => ({
+                date: date,
+                event: event
+            }));
+
+            // Filtra los eventos futuros y los ordena por fecha
+            const filteredAndSortedEvents = celebrationArray
+                .filter(item => item.date >= today)
+                .sort((a, b) => new Date(a.date) - new Date(b.date));
+
+            const nextFiveEvents = filteredAndSortedEvents.slice(0, 5);
+
+            if (nextFiveEvents.length > 0) {
+                nextFiveEvents.forEach(item => {
+                    const dateParts = item.date.split('-');
+                    const day = dateParts[2];
+                    const monthIndex = parseInt(dateParts[1]) - 1;
+                    const monthName = months[monthIndex];
+                    
+                    const li = document.createElement('li');
+                    li.innerHTML = `<strong>${day} de ${monthName}:</strong> ${item.event}`;
+                    
+                    // 1. Agrega el atributo de la fecha (Importante)
+                    li.setAttribute('data-date', item.date);
+                    
+                    // 2. Agrega el Click Listener que llama a showCelebration
+                    li.addEventListener('click', () => {
+                        showCelebration(item.date);
+                    });
+
+                    upcomingList.appendChild(li);
+                });
+            } else {
+                const li = document.createElement('li');
+                li.innerText = "No hay eventos próximos registrados. 🎉";
+                upcomingList.appendChild(li);
+            }
+        }
+        // --- FIN FUNCIÓN PARA EVENTOS PRÓXIMOS ---
+
+
+        // Inicializar el calendario y los eventos
         renderCalendar();
-    });
-});
-    </script> 
+        renderUpcomingEvents(); // Llamada para cargar los eventos próximos
+
+        prevNextIcons.forEach(icon => {
+            icon.addEventListener("click", () => {
+                currentMonth = icon.id === "prevIcon" ? currentMonth-1 : currentMonth + 1;
+                
+                if (currentMonth < 0 || currentMonth > 11) {
+                    date = new Date(currentYear, currentMonth);
+                    currentYear = date.getFullYear();
+                    currentMonth = date.getMonth();
+                }
+                
+                renderCalendar();
+            });
+        });
+        </script> 
         </section>
 
     </div>
