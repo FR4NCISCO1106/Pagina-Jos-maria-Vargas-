@@ -271,7 +271,7 @@ section {
 
 .image-wrapper {
     display: flex;
-    flex: 0 1 650px;
+    flex: 0 1 380px;
 }
 
 .prev-button, .next-button {
@@ -309,7 +309,7 @@ section {
 /* Estilos para el contenido, esto es personalizable */
 .content {
     flex: 1 1 450px;
-    max-width: 650px;
+    max-width: 550px;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -403,12 +403,12 @@ h2, h3{
     padding: 20px;
     text-align: center;
     min-height: 250px; 
-    height: 30vh;
+    height: 40vh;
 }
 
 .card-image img {
     max-width: 100%;
-    height: auto;
+    height: 100%;
     border-radius: 10px;
 }
 

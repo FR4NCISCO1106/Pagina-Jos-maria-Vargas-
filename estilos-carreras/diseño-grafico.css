@@ -566,3 +566,18 @@ h3 {
         -webkit-transform: translateY(calc(100% - 42px));
     }
 }
+
+.banner-intermediate {
+    height: 450px;
+    width: 1520px;
+    background-color: var(--color-bg-gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.banner-intermediate h2 {
+    color: #333;
+    font-size: 2em;
+}
