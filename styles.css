@@ -711,7 +711,7 @@ p{
     color: #405fff;
 }
 .navbar__item.-black {
-    color: #e432f1;
+    color: #ee00ff;
 }
 .navbar__item:hover::before, .navbar__item:hover::after {
     transform: translateY(-58px) scale(1.1);
